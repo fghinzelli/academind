@@ -1,7 +1,7 @@
 
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 
-function App() {
+const App = () => {
 
   const items = [
     { title: "Market", amount: 500, date: new Date(2022, 5, 1)},
