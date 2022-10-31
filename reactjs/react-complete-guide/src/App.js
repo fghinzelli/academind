@@ -1,26 +1,28 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpese";
 
+const INITIAL_ITEMS = [
+  { title: "Market", amount: 500, date: new Date(2022, 5, 1) },
+  { title: "Fuel", amount: 100, date: new Date(2022, 7, 2) },
+  { title: "Energy", amount: 200, date: new Date(2022, 8, 3) },
+];
+
 const App = () => {
   
-  const items = [
-    { title: "Market", amount: 500, date: new Date(2022, 5, 1) },
-    { title: "Fuel", amount: 100, date: new Date(2022, 7, 2) },
-    { title: "Energy", amount: 200, date: new Date(2022, 8, 3) },
-  ];
+  const [ items, setItems ] = useState(INITIAL_ITEMS);
 
-
-  const addExpense = (newExpense) => {
-    console.log('On App.js')
-    console.log(newExpense)
+  const addExpenseHandler = (newExpense) => {
+    setItems(prevItems => {
+      return [newExpense, ...prevItems];
+    })
   }
 
 
   return (
     <>
-      <NewExpense onAddExpense={addExpense} />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={items} s/>
     </>
   );
