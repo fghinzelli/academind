@@ -17,7 +17,7 @@ const NewExpense = (props) => {
   }
 
   const showFormHandler = () => {
-    setShowForm(prevStatus => setShowForm(!prevStatus))
+    setShowForm(!showForm)
   }
 
   let form = <button onClick={showFormHandler}>Add note</button>
