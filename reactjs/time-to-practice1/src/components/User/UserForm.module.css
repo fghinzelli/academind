@@ -1,0 +1,25 @@
+.userForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+}
+
+.formInput {
+    width: 100%;
+    padding: 4px;
+}
+
+.labelInput {
+    padding: 6px 0px;
+    font-weight: bold;
+}
+
+.addUserButton {
+    margin: 12px 0px;
+    padding: 8px 16px;
+    background-color: darkmagenta;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
