@@ -1,0 +1,7 @@
+.userItem {
+    list-style: none;
+    padding: 12px;
+    border: 1px gray solid;
+    margin: 12px 0px;
+    text-align: left;
+}
