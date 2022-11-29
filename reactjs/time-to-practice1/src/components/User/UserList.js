@@ -10,13 +10,23 @@ const UserList = (props) => {
     props.removeUser(username);
   };
 
-  return (
-    <Card>
+
+
+  let list = 'The list is empty';
+
+  if (props.users.length !== 0) {
+    list = (
       <ul className={style.userList}>
         {props.users.map((user) => (
           <User removeUser={username => removeUserHandler(username)} key={user.username} user={user} />
         ))}
       </ul>
+    )
+  }
+
+  return (
+    <Card>
+      { list }
     </Card>
   );
 };
